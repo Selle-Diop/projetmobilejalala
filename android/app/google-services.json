@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "408054532495",
+    "project_id": "jalalamaps-374f0",
+    "storage_bucket": "jalalamaps-374f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408054532495:android:55dcc7861f4159f74aa3fa",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408054532495-do9fj3lj0482hbp4ao4gselqp2lbe5dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF6ZJYCsGNN7i1YwRp1bQhpSBp5qZbh-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408054532495-do9fj3lj0482hbp4ao4gselqp2lbe5dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
