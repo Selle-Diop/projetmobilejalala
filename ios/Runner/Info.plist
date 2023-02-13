@@ -46,6 +46,12 @@
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
+	<!-- <true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Choisir votre photo profil</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To take user profile image</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used to capture audio for image picker plugin</string> -->
 </dict>
 </plist>

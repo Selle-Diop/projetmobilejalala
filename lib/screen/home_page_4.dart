@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screen/pageAcceuil.dart';
 import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +62,9 @@ class connexion_inscription extends StatelessWidget {
                 child: Column(
                   children: [
                     ElevatedButton(
-                      onPressed: (() => Get.to(page_connexion())),
+                      // onPressed: (() => Get.to(page_connexion())),
+                      onPressed: (() => Get.to(pageAcceuil())),
+
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF008000),
                         padding: const EdgeInsets.all(8.0),

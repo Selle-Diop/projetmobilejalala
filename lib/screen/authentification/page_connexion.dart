@@ -135,6 +135,7 @@ class _fomulaire_connexionState extends State<fomulaire_connexion> {
                       padding: EdgeInsets.symmetric(horizontal: 2),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
+
                         controller: _textEditingController,
                         showCursor: true,
                         onChanged: (value) {
@@ -195,18 +196,29 @@ class _fomulaire_connexionState extends State<fomulaire_connexion> {
                     margin: EdgeInsets.only(top: 13),
                     height: 50,
                     width: 264,
-                    padding: EdgeInsets.only(top: 3, left: 8),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFEDEDEF),
-                      borderRadius: new BorderRadius.circular(15.0),
-                    ),
+                    // padding: EdgeInsets.only(top: 3, left: 8),
+                    // decoration: BoxDecoration(
+                    //   color: const Color(0xFFEDEDEF),
+                    //   borderRadius: new BorderRadius.circular(15.0),
+                    // ),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       controller: _textEditingPassword,
                       decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: isEmailCorrcet == false
+                                      ? Colors.red.shade200
+                                      : Colors.green.shade200,
+                                  width: 2),
+                              borderRadius: BorderRadius.circular(15.0)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 2),
+                              borderRadius: BorderRadius.circular(15.0)),
                           hintText: 'Your password',
                           border: InputBorder.none,
-                          labelStyle: TextStyle(
+                          hintStyle: TextStyle(
                               fontSize: 13, color: Color(0xFF9BA2B1))),
                       obscureText: true,
                       validator: (value) {

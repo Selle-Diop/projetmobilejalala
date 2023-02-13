@@ -61,7 +61,7 @@ class page_inscription extends StatelessWidget {
               shadowColor: Colors.white,
               child: SizedBox(
                 width: 350,
-                height: 590,
+                height: 570,
                 child: Container(
                   // color: Colors.red,
                   // margin: EdgeInsets.only(top: 1),
@@ -89,17 +89,13 @@ class formulaire_inscription extends StatefulWidget {
 }
 
 class _formulaire_inscriptionState extends State<formulaire_inscription> {
-  // bool isLogin = true;
-  // _formulaire_inscriptionState() {
-  //   _selectedVal = _lesAbonnees[0];
-  // }
   String email = '';
   String nomComplet = '';
   String password = '';
   String confirmPassword = '';
   final AuthService _authService = AuthService();
-  TextEditingController _textEditingController = TextEditingController();
-  TextEditingController _textEditingPassword = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingPassword = TextEditingController();
 
   bool isEmailCorrcet = false;
   @override
@@ -111,12 +107,13 @@ class _formulaire_inscriptionState extends State<formulaire_inscription> {
   }
 
   final _formKey = GlobalKey<FormState>();
-  final _lesAbonnees = ["ménages", "Agent de ramassage", "Agent de JalalaMaps"];
-  String? _selectedVal;
+
   @override
   Widget build(BuildContext context) {
     // isLogin ? page_connexion() : formulaire_inscription();
     return Container(
+      margin: const EdgeInsets.only(top: 25),
+      // color: Colors.red,
       child: Form(
           key: _formKey,
           child: Column(
@@ -169,68 +166,6 @@ class _formulaire_inscriptionState extends State<formulaire_inscription> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
                       child: textFormMail(),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 13.0,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 6),
-                    child: Text(
-                      'Type d\'abonnement',
-                      style: GoogleFonts.roboto(
-                          color: const Color(0xFF38385E),
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 5),
-                    height: 56,
-                    width: 264,
-                    // padding: EdgeInsets.only(left: 8),
-
-                    padding: EdgeInsets.only(right: 2, left: 2, top: 1),
-                    child: DropdownButtonFormField(
-                      // dropdownColor: Colors.green,
-                      icon: Icon(
-                        Icons.arrow_drop_down_circle,
-                        color: Colors.green,
-                      ),
-                      hint: const Text(
-                        'Choissisez votre abonnement',
-                        style:
-                            TextStyle(fontSize: 14, color: Color(0xFF9BA2B1)),
-                      ),
-                      value: _selectedVal,
-                      items: _lesAbonnees
-                          .map((e) => DropdownMenuItem(
-                                child: Text(e),
-                                value: e,
-                              ))
-                          .toList(),
-                      onChanged: (val) {
-                        setState(() {
-                          _selectedVal = val as String;
-                        });
-                      },
-                      decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.green.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(15.0)),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(15.0)),
-                          border: InputBorder.none,
-                          hintStyle: const TextStyle(
-                              fontSize: 14, color: Color(0xFF9BA2B1))),
                     ),
                   ),
                 ],
@@ -310,7 +245,7 @@ class _formulaire_inscriptionState extends State<formulaire_inscription> {
                     ),
                   ),
                   const SizedBox(
-                    height: 5.0,
+                    height: 9.0,
                   ),
                   Container(
                     child: Row(
@@ -346,8 +281,8 @@ class _formulaire_inscriptionState extends State<formulaire_inscription> {
                     margin: const EdgeInsets.only(left: 70),
                     // color: Colors.red,
                   ),
-                  const SizedBox(
-                    height: 3.0,
+                  SizedBox(
+                    height: 7.0,
                   ),
                   ElevatedButton(
                     onPressed: () async {
@@ -487,7 +422,7 @@ class _formulaire_inscriptionState extends State<formulaire_inscription> {
               borderRadius: BorderRadius.circular(15.0)),
           // border: InputBorder.none,
           hintText: 'Jonh@gmail.com',
-          hintStyle: TextStyle(fontSize: 14, color: Color(0xFF9BA2B1))),
+          hintStyle: const TextStyle(fontSize: 14, color: Color(0xFF9BA2B1))),
       validator: (value) {
         if (isEmailCorrcet == false) {
           if (value == null || value.isEmpty) {
